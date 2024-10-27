@@ -1,0 +1,28 @@
+<ng-container *ngIf="allPosts.length > 0; else noPost ">
+<div class="row">
+    <div class="col-md-4 my-4" *ngFor="let post of allPosts">
+        <div class="card h-100">
+            <div class="card-header">
+                <h3>{{post.title}}</h3>
+            </div>
+            <div class="card-body">
+                <p>{{post.body}}</p>
+            </div>
+            <div class="card-footer d-flex justify-content-between">
+               <button class="btn btn-outline-primary btn-sm">Edit</button>
+               <button class="btn btn-outline-danger btn-sm">Remove</button>
+            </div>
+        </div>
+    </div>
+</div>
+</ng-container>
+
+<ng-template #noPost>
+    <p class="alert alert-info my-5">
+        No Post!!
+    </p>
+</ng-template>
+
+<button class="scroll-to-top-btn" appScrolltotop>
+    Go to Top
+</button>
